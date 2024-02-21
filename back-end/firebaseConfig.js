@@ -1,7 +1,7 @@
-const firebase = require('firebase/app');
-require('firebase/firestore'); 
+// Importar as funções individuais do Firebase v9+
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
 
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: "AIzaSyCrCnb5Q42-Xg7djhxLzMvvL4uEY76YL7M",
     authDomain: "formulario-de-interesse.firebaseapp.com",
@@ -12,8 +12,10 @@ const firebaseConfig = {
     measurementId: "G-VPZE6WK97G"
 };
 
-firebase.initializeApp(firebaseConfig);
+// Inicializa o Firebase
+const app = initializeApp(firebaseConfig);
 
-const db = firebase.firestore();
+// Inicializa o Firestore
+const db = getFirestore(app);
 
-module.exports = db;
+export { db };

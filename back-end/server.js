@@ -12,7 +12,7 @@ app.listen(port, () => {
     console.log(`Servidor ouvindo em http://localhost:${port}`);
 });
 
-const db = require('./firebaseConfig');
+const { db } = require('./firebaseConfig');
 
 app.post('/submit-form', (req, res) => {
     const userData = req.body;
