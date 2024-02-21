@@ -11,3 +11,13 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`Servidor ouvindo em http://localhost:${port}`);
 });
+
+const db = require('./firebaseConfig');
+
+app.post('/submit-form', (req, res) => {
+    const userData = req.body;
+
+    db.collection('users').add(userData)
+    .then(() => res.send('Dados enviados com sucesso!'))
+    .catch(error => res.status(400).send(error.message));
+});
