@@ -1,4 +1,3 @@
-// Importar as funções individuais do Firebase v9+
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
@@ -12,10 +11,7 @@ const firebaseConfig = {
     measurementId: "G-VPZE6WK97G"
 };
 
-// Inicializa o Firebase
 const app = initializeApp(firebaseConfig);
-
-// Inicializa o Firestore
 const db = getFirestore(app);
 
 export { db };
