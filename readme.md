@@ -21,35 +21,35 @@ Este projeto visa desenvolver um site com um formulário de interesse, para que 
 Plano detalhado para o desenvolvimento do formulário:
 
 **Planejamento**
-- [ ] Definição de Requisitos
-  - [ ] Identificar campos obrigatórios e opcionais
-  - [ ] Definir lógica para campos condicionais
-  - [ ] Escolher entre planilha ou banco de dados para armazenamento
+- [x] Definição de Requisitos
+  - [x] Identificar campos obrigatórios e opcionais
+  - [x] Definir lógica para campos condicionais
+  - [x] Escolher entre planilha ou banco de dados para armazenamento
 
-- [ ] Escolha de Tecnologias
-  - [ ] Selecionar tecnologias de frontend (HTML, CSS, JavaScript)
-  - [ ] Definir tecnologia de backend (Node.js, Flask)
-  - [ ] Escolher banco de dados (Google Sheets API)
+- [x] Escolha de Tecnologias
+  - [x] Selecionar tecnologias de frontend (HTML, CSS, JavaScript)
+  - [x] Definir tecnologia de backend (Node.js)
+  - [x] Escolher banco de dados (Google Sheets API)
 
 **Design**
-- [ ] Design do Formulário no figma
+- [x] Design do Formulário no figma
 
 **Desenvolvimento**
-- [ ] Frontend
-  - [ ] Implementar formulário com HTML, CSS e JavaScript
-  - [ ] Programar lógica de campos condicionais
+- [x] Frontend
+  - [x] Implementar formulário com HTML, CSS e JavaScript
+  - [x] Programar lógica de campos condicionais
 - [ ] Backend
   - [ ] Configurar ambiente backend
   - [ ] Implementar lógica para armazenamento de dados
 
 **Testes**
-- [ ] Testes
-  - [ ] Realizar testes unitários e de integração
-  - [ ] Executar testes de usabilidade
+- [x] Testes
+  - [x] Realizar testes unitários e de integração
+  - [x] Executar testes de usabilidade
 
 **Lançamento**
-- [ ] Publicação
-  - [ ] Publicar formulário em servidor ou plataforma de hospedagem
+- [x] Publicação
+  - [x] Publicar formulário em servidor ou plataforma de hospedagem
 
 **Manutenção e Atualizações**
 - [ ] Feedback
