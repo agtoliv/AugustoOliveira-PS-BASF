@@ -219,6 +219,8 @@ function showError(input, message) {
     input.nextElementSibling.innerHTML = message;
 }
 
+//////////// condicional//////////
+
 document.addEventListener('DOMContentLoaded', function() {
     const firstOptionRadio = document.querySelector('input[name="option"][value="firstoption"]');
     const secondOptionRadio = document.querySelector('input[name="option"][value="secondoption"]');
@@ -243,6 +245,49 @@ document.addEventListener('DOMContentLoaded', function() {
     // Inicializando estado visível
     toggleVisibility(); // Garante que a visibilidade esteja correta ao carregar a página
 });
+
+function setupProductHandlers(productNumber) {
+    var volumeId = 'volume' + productNumber;
+    var pId = 'p' + productNumber;
+    var volumeBoxId = 'volumeBox' + productNumber;
+
+    function incrementValue(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        var value = parseInt(document.getElementById(volumeId).value, 10);
+        value = isNaN(value) ? 0 : value;
+        value++;
+        document.getElementById(volumeId).value = value;
+    }
+
+    function decrementValue(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        var value = parseInt(document.getElementById(volumeId).value, 10);
+        value = isNaN(value) ? 0 : value;
+        if (value > 1) {
+            value--;
+            document.getElementById(volumeId).value = value;
+        }
+    }
+
+    document.getElementById(pId).addEventListener('change', function() {
+        var volumeBox = document.getElementById(volumeBoxId);
+        if (this.checked) {
+            volumeBox.style.display = 'block';
+        } else {
+            volumeBox.style.display = 'none';
+        }
+    });
+
+    document.getElementById('increment' + productNumber).addEventListener('click', incrementValue);
+    document.getElementById('decrement' + productNumber).addEventListener('click', decrementValue);
+}
+
+// Configurar para produtos de 1 a 15
+for (var i = 1; i <= 15; i++) {
+    setupProductHandlers(i);
+}
 
 
 
