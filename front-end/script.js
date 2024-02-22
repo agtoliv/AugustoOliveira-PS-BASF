@@ -1,4 +1,4 @@
-const handleSubmit = (event) => {
+function handleSubmit(event) {
     event.preventDefault();
 
     // Captura os valores dos campos de entrada existentes
@@ -7,6 +7,13 @@ const handleSubmit = (event) => {
     const email = document.querySelector('input[name=email]').value;
     const tel = document.querySelector('input[name=tel]').value;
     const city = document.querySelector('input[name=city]').value;
+    // Captura o valor da área de texto de descrição, se aplicável
+    const description = document.querySelector('#descriptionField textarea') ? document.querySelector('#descriptionField textarea').value.trim() : "";
+    // Captura o valor da área de texto de observações
+    const observations = document.querySelector('.obs textarea').value.trim();
+
+    // Verifica se a opção "secondoption" está selecionada para a descrição
+    const isSecondOptionSelected = document.querySelector('input[name="option"][value="secondoption"]').checked;
 
     // Coleta os dados dos produtos selecionados e seus volumes
     const products = [];
@@ -21,7 +28,7 @@ const handleSubmit = (event) => {
         }
     }
 
-    // Prepara os dados para envio, incluindo os produtos e volumes
+    // Prepara os dados para envio, incluindo os produtos, volumes, descrição e observações
     const data = {
         firstname,
         lastname,
@@ -30,6 +37,16 @@ const handleSubmit = (event) => {
         city,
         products: JSON.stringify(products), // Converte a lista de produtos em uma string JSON
     };
+
+    // Inclui descrição se "secondoption" estiver selecionada e descrição estiver preenchida
+    if (isSecondOptionSelected && description !== "") {
+        data.description = description;
+    }
+
+    // Sempre inclui observações, se houver
+    if (observations !== "") {
+        data.observations = observations;
+    }
 
     fetch('https://api.sheetmonkey.io/form/nAgMX6GjWHZpsrWrD5ZrtC', {
         method: 'post',
