@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik+Glitch&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Montsserat', sans-serif;
+}
+
+.container{
+    margin-top: 5%;
+    margin-left: 10%;
+}
+
+.header{
+    font-family: 'Montsserat', sans-serif;
+    color: black;
+    margin-left: 1px;
+}
+
+fieldset{
+    border:0;
+}
+
+body{
+    background-color: aliceblue;
+    font-family: 'Montsserat', sans-serif;
+    font-size: 1em;
+    color: black;
+    margin-left: 10%;
+    margin-top:2%;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+input, textarea, button{
+    border-radius: 5px;
+}
+
+.container-form{
+    max-width: 600px;
+    width: 100%;
+    margin-left: 2%;
+}
+
+.position-inputs {
+    width: 800px; /* Ajuste para o valor que você deseja */
+    margin: 0 auto; /* Centraliza a div na página */
+}
+
+.inputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.box, 
+.box-vol {
+    flex: 0 0 45%; /* Isso significa que cada box terá 45% da largura total, permitindo que dois caibam em uma linha com um pequeno espaço entre eles */
+    margin-bottom: 20px; /* Isso adiciona um espaço abaixo de cada box para separar as linhas */
+    display: flex;
+    flex-direction: column;
+}
+
+.description{
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 5%;
+}
+
+.box input,
+.box-vol input{
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    padding: 8px;
+    border: 2px solid #dfdfdf
+}
+
+.box label sup{
+    font-size: 12px;
+    color:red;
+}

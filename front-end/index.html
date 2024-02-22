@@ -1,326 +1,82 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produtos-BASF</title>
+    <title>Formulário de Interesse</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Cadastre-se</h1>
-        <form>
-            <div class="input-group">
-                <label for="firstname">Nome<sup>*</sup></label>
-                <input id="firstname" type="text" name="firstname" placeholder="Digite seu nome">
-                <span class="error-message"></span>
-            </div>
+        <div class="header">
+            <h1>Cadastre-se</h1>
+        </div><br>
+        <div class="container-form">
+            <div class="form">
+                <form id="form">
+                    <div class="position-inputs">
+                        <div class="inputs">
+                            <div class="box">
+                                <label for="firstname">Nome<sup>*</sup></label>
+                                <input id="firstname" type="text" name="firstname" placeholder="Digite seu nome" required/>
+                                <span class="error-message"></span>
+                            </div>
 
-            <div class="input-group">
-                <label for="lastname">Sobrenome<sup>*</sup></label>
-                <input id="lastname" type="text" name="lastname" placeholder="Digite seu sobrenome">
-                <span class="error-message"></span>
-            </div>
+                            <div class="box">
+                                <label for="lastname">Sobrenome<sup>*</sup></label>
+                                <input id="lastname" type="text" name="lastname" placeholder="Digite seu sobrenome" required/>
+                                <span class="error-message"></span>
+                            </div>
 
-            <div class="input-group">
-                <label for="email">E-mail<sup>*</sup></label>
-                <input id="email" type="email" name="email" placeholder="Digite seu e-mail">
-                <span class="error-message"></span>
-            </div>
+                            <div class="box">
+                                <label for="email">E-mail<sup>*</sup></label>
+                                <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required/>
+                                <span class="error-message"></span>
+                            </div>
 
-            <div class="input-group">
-                <label for="tel">Telefone</label>
-                <input id="tel" type="tel" name="tel"/>
-                <span class="error-message"></span>
-            </div>
+                            <div class="box">
+                                <label for="tel">Telefone</label>
+                                <input id="tel" type="tel" name="tel"/>
+                                <span class="error-message"></span>
+                            </div>
 
-            <div class="input-group">
-                <label for="city">Cidade</label>
-                <input id="city" type="text" name="city" placeholder="Digite sua cidade"/>
-                <span class="error-message"></span>
-            </div>
+                            <div class="box">
+                                <label for="city">Cidade</label>
+                                <input id="city" type="text" name="city" placeholder="Digite sua cidade"/>
+                                <span class="error-message"></span>
+                            </div>
 
-            <div class="escolha">
-                <label>Sabe qual produto utlizar?</label>
-                <div class="options">
-                    <label>
-                        <input type="radio" name="option" value="firstoption">Sim, sei qual produto utlizar
-                    </label>
-                    <label>
-                        <input type="radio" name="option" value="secondoption">Não sei qual produto utlizar
-                    </label>
-                </div>
+
+
+
+
+
+
+            <div>
+                <label>Sabe qual produto utilizar?</label>
+                <label><input type="radio" name="option" value="firstoption">Sim, sei qual produto utilizar</label>
+                <label><input type="radio" name="option" value="secondoption">Não sei qual produto utilizar</label>
             </div>
 
             <fieldset id="productFieldset">
-                <p>Selecione os produtos:</p>
-                <div class="products">
-                    <div class="bigColumn">
-                        <div class="column">
-                            <div class="product-item">
-                                <div class="check">
-                                    <label for="p1">Texapon S 2</label>
-                                    <input type="checkbox" id="p1" name="p1" value="Texapon">
-                                </div>
-                                <div class="box-vol" id="volumeBox1" style="display: none;">
-                                    <label for="volume1">Volume do produto</label>
-                                    <div class="input-group">
-                                        <button onclick="decrementValue(1)" id="decrement1">-</button>
-                                        <input id="volume1" type="number" name="volume1" min="1" placeholder="Digite seu volume"/>
-                                        <button onclick="incrementValue(1)" id="increment1">+</button>
-                                    </div>
-                                    <span class="error-message"></span>
-                                </div>
-                            </div>
-                            
-                            <div class="product-item">
-                                <div class="check">
-                                    <label for="p2">Texapon S 2</label>
-                                    <input type="checkbox" id="p2" name="p2" value="Texapon">
-                                </div>
-                                <div class="box-vol" id="volumeBox2" style="display: none;">
-                                    <label for="volume2">Volume do produto</label>
-                                    <div class="input-group">
-                                        <button onclick="decrementValue(2)" id="decrement2">-</button>
-                                        <input id="volume2" type="number" name="volume2" min="1" placeholder="Digite seu volume"/>
-                                        <button onclick="incrementValue(2)" id="increment2">+</button>
-                                    </div>
-                                    <span class="error-message"></span>
-                                </div>
-                            </div>
-
-                            <div class="product-item">
-                                <div class="check">
-                                    <label for="p3">Texapon S 2</label>
-                                    <input type="checkbox" id="p3" name="p3" value="Texapon">
-                                </div>
-                                <div class="box-vol" id="volumeBox3" style="display: none;">
-                                    <label for="volume3">Volume do produto</label>
-                                    <div class="input-group">
-                                        <button onclick="decrementValue(3)" id="decrement3">-</button>
-                                        <input id="volume3" type="number" name="volume3" min="1" placeholder="Digite seu volume"/>
-                                        <button onclick="incrementValue(3)" id="increment3">+</button>
-                                    </div>
-                                    <span class="error-message"></span>
-                                </div>
-                            </div>
-
-                            <div class="product-item">
-                                <div class="check">
-                                    <label for="p4">Texapon S 2</label>
-                                    <input type="checkbox" id="p4" name="p4" value="Texapon">
-                                </div>
-                                <div class="box-vol" id="volumeBox4" style="display: none;">
-                                    <label for="volume4">Volume do produto</label>
-                                    <div class="input-group">
-                                        <button onclick="decrementValue(4)" id="decrement4">-</button>
-                                        <input id="volume4" type="number" name="volume4" min="1" placeholder="Digite seu volume"/>
-                                        <button onclick="incrementValue(4)" id="increment4">+</button>
-                                    </div>
-                                    <span class="error-message"></span>
-                                </div>
-                            </div>
-
-                            <div class="product-item">
-                                <div class="check">
-                                    <label for="p5">Texapon S 2</label>
-                                    <input type="checkbox" id="p5" name="p5" value="Texapon">
-                                </div>
-                                <div class="box-vol" id="volumeBox5" style="display: none;">
-                                    <label for="volume5">Volume do produto</label>
-                                    <div class="input-group">
-                                        <button onclick="decrementValue(5)" id="decrement5">-</button>
-                                        <input id="volume5" type="number" name="volume5" min="1" placeholder="Digite seu volume"/>
-                                        <button onclick="incrementValue(5)" id="increment5">+</button>
-                                    </div>
-                                    <span class="error-message"></span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="column">
-                            <div class="product-item">
-                                <div class="check">
-                                    <label for="p6">Texapon S 2</label>
-                                    <input type="checkbox" id="p6" name="p6" value="Texapon">
-                                </div>
-                                <div class="box-vol" id="volumeBox6" style="display: none;">
-                                    <label for="volume6">Volume do produto</label>
-                                    <div class="input-group">
-                                        <button onclick="decrementValue(6)" id="decrement6">-</button>
-                                        <input id="volume6" type="number" name="volume6" min="1" placeholder="Digite seu volume"/>
-                                        <button onclick="incrementValue(6)" id="increment6">+</button>
-                                    </div>
-                                    <span class="error-message"></span>
-                                </div>
-                            </div>
-                                
-                            <div class="product-item">
-                                <div class="check">
-                                    <label for="p7">Texapon S 2</label>
-                                    <input type="checkbox" id="p7" name="p7" value="Texapon">
-                                </div>
-                                <div class="box-vol" id="volumeBox7" style="display: none;">
-                                    <label for="volume7">Volume do produto</label>
-                                    <div class="input-group">
-                                        <button onclick="decrementValue(7)" id="decrement7">-</button>
-                                        <input id="volume7" type="number" name="volume7" min="1" placeholder="Digite seu volume"/>
-                                        <button onclick="incrementValue(7)" id="increment7">+</button>
-                                    </div>
-                                    <span class="error-message"></span>
-                                </div>
-                            </div>
-
-                            <div class="product-item">
-                                <div class="check">
-                                    <label for="p8">Texapon S 2</label>
-                                    <input type="checkbox" id="p8" name="p8" value="Texapon">
-                                </div>
-                                <div class="box-vol" id="volumeBox8" style="display: none;">
-                                    <label for="volume8">Volume do produto</label>
-                                    <div class="input-group">
-                                        <button onclick="decrementValue(8)" id="decrement8">-</button>
-                                        <input id="volume8" type="number" name="volume8" min="1" placeholder="Digite seu volume"/>
-                                        <button onclick="incrementValue(8)" id="increment8">+</button>
-                                    </div>
-                                    <span class="error-message"></span>
-                                </div>
-                            </div>
-
-                            <div class="product-item">
-                                <div class="check">
-                                    <label for="p9">Texapon S 2</label>
-                                    <input type="checkbox" id="p9" name="p9" value="Texapon">
-                                </div>
-                                <div class="box-vol" id="volumeBox9" style="display: none;">
-                                    <label for="volume9">Volume do produto</label>
-                                    <div class="input-group">
-                                        <button onclick="decrementValue(9)" id="decrement9">-</button>
-                                        <input id="volume9" type="number" name="volume9" min="1" placeholder="Digite seu volume"/>
-                                        <button onclick="incrementValue(9)" id="increment9">+</button>
-                                    </div>
-                                    <span class="error-message"></span>
-                                </div>
-                            </div>
-
-
-                            <div class="product-item">
-                                <div class="check">
-                                    <label for="p10">Texapon S 2</label>
-                                    <input type="checkbox" id="p10" name="p10" value="Texapon">
-                                </div>
-                                <div class="box-vol" id="volumeBox10" style="display: none;">
-                                    <label for="volume10">Volume do produto</label>
-                                    <div class="input-group">
-                                        <button onclick="decrementValue(10)" id="decrement10">-</button>
-                                        <input id="volume10" type="number" name="volume10" min="1" placeholder="Digite seu volume"/>
-                                        <button onclick="incrementValue(10)" id="increment10">+</button>
-                                    </div>
-                                    <span class="error-message"></span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="column">
-                            <div class="product-item">
-                                <div class="check">
-                                    <label for="p11">Texapon S 2</label>
-                                    <input type="checkbox" id="p11" name="p11" value="Texapon">
-                                </div>
-                                <div class="box-vol" id="volumeBox11" style="display: none;">
-                                    <label for="volume11">Volume do produto</label>
-                                    <div class="input-group">
-                                        <button onclick="decrementValue(11)" id="decrement11">-</button>
-                                        <input id="volume11" type="number" name="volume11" min="1" placeholder="Digite seu volume"/>
-                                        <button onclick="incrementValue(11)" id="increment11">+</button>
-                                    </div>
-                                    <span class="error-message"></span>
-                                </div>
-                            </div>
-
-                            <div class="product-item">
-                                <div class="check">
-                                    <label for="p12">Texapon S 2</label>
-                                    <input type="checkbox" id="p12" name="p12" value="Texapon">
-                                </div>
-                                <div class="box-vol" id="volumeBox12" style="display: none;">
-                                    <label for="volume12">Volume do produto</label>
-                                    <div class="input-group">
-                                        <button onclick="decrementValue(12)" id="decrement12">-</button>
-                                        <input id="volume12" type="number" name="volume12" min="1" placeholder="Digite seu volume"/>
-                                        <button onclick="incrementValue(12)" id="increment12">+</button>
-                                    </div>
-                                    <span class="error-message"></span>
-                                </div>
-                            </div>
-
-                            <div class="product-item">
-                                <div class="check">
-                                    <label for="p13">Texapon S 2</label>
-                                    <input type="checkbox" id="p13" name="p13" value="Texapon">
-                                </div>
-                                <div class="box-vol" id="volumeBox13" style="display: none;">
-                                    <label for="volume13">Volume do produto</label>
-                                    <div class="input-group">
-                                        <button onclick="decrementValue(13)" id="decrement13">-</button>
-                                        <input id="volume13" type="number" name="volume13" min="1" placeholder="Digite seu volume"/>
-                                        <button onclick="incrementValue(13)" id="increment13">+</button>
-                                    </div>
-                                    <span class="error-message"></span>
-                                </div>
-                            </div>
-
-                            <div class="product-item">
-                                <div class="check">
-                                    <label for="p14">Texapon S 2</label>
-                                    <input type="checkbox" id="p14" name="p14" value="Texapon">
-                                </div>
-                                <div class="box-vol" id="volumeBox14" style="display: none;">
-                                    <label for="volume14">Volume do produto</label>
-                                    <div class="input-group">
-                                        <button onclick="decrementValue(14)" id="decrement14">-</button>
-                                        <input id="volume14" type="number" name="volume14" min="1" placeholder="Digite seu volume"/>
-                                        <button onclick="incrementValue(14)" id="increment14">+</button>
-                                    </div>
-                                    <span class="error-message"></span>
-                                </div>
-                            </div>
-
-                            <div class="product-item">
-                                <div class="check">
-                                    <label for="p15">Texapon S 2</label>
-                                    <input type="checkbox" id="p15" name="p15" value="Texapon">
-                                </div>
-                                <div class="box-vol" id="volumeBox15" style="display: none;">
-                                    <label for="volume15">Volume do produto</label>
-                                    <div class="input-group">
-                                        <button onclick="decrementValue(15)" id="decrement15">-</button>
-                                        <input id="volume15" type="number" name="volume15" min="1" placeholder="Digite seu volume"/>
-                                        <button onclick="incrementValue(15)" id="increment15">+</button>
-                                    </div>
-                                    <span class="error-message"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="obs">
-                            <div class="obs-item-label">
-                                <label>Observações</label>
-                            </div>
-                            <div class="obs-item">                       
-                                <textarea placeholder="Digite alguma observação, caso tenha uma"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <legend>Selecione os produtos:</legend>
+                
             </fieldset>
 
-
-
-
-            <div id="btn">
-                <button type="submit" class="submit-btn">Enviar</button>
+            <div id="descriptionField">
+                <label for="description">Descreva sua necessidade</label>
+                <textarea id="description" placeholder="Elabore como é seu problema"></textarea>
             </div>
+
+            <div id="agreementField">
+                <label>
+                    <input type="radio" name="agreement" value="agreementOK">Li e estou de acordo com os <a href="https://shop.basf.com.br/pt-BR/about-us/terms-of-use">termos/condições de uso</a> e a <a href="https://shop.basf.com.br/pt-BR/about-us/politica-de-privacidade-da-basf-brasil">política de privacidade</a>.
+                </label>
+            </div>
+
+            <button type="submit">Enviar</button>
         </form>
     </div>
     <script src="script.js"></script>
 </body>
+</html>
