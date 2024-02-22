@@ -16,6 +16,11 @@ Este projeto visa desenvolver um site com um formulário de interesse, para que 
 - Banco de Dados: Google Sheets API para armazenamento de dados
 - Hospedagem: Github pages
 
+## Arquetetura do sistema
+Ideia básica da disposição da arquitetura
+![Página do Formulário de Interesse](assets/arquiteturaSistema.jpeg)
+
+
 ## Roadmap
 
 Plano detalhado para o desenvolvimento do formulário:
