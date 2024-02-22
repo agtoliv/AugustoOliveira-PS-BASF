@@ -250,6 +250,7 @@ function showError(input, message) {
     input.nextElementSibling.innerHTML = message;
 }
 
+
 //////////// condicional//////////
 
 document.addEventListener('DOMContentLoaded', function() {

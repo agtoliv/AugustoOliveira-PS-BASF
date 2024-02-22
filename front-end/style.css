@@ -119,6 +119,10 @@ input, textarea, button{
     width: 100%;
 }
 
+.check{
+    margin-top: 5px;
+}
+
 .box-vol{
     margin-top: 5px;
     margin-left: 1px;
@@ -185,7 +189,7 @@ input[type='number']::-webkit-inner-spin-button {
 }
 
 .obs{
-    margin-top: 12px;
+    margin-top: 36px;
     display:flex;
     flex-direction: column;
     clear: both;
@@ -215,6 +219,11 @@ fieldset p{
     height: 100%;
     margin-top: 2%;
     margin-bottom: 2%;
+}
+
+.agreement-options{
+    margin-top: 12px;
+    margin-left: 2px;
 }
 
 .agreement-options label{
@@ -252,7 +261,7 @@ fieldset p{
     font-weight: bold;
     padding: 12px;
     color: rgb(255, 255, 255);
-    background-color: rgb(197, 0, 34);
+    background-color: rgb(101 172 30);
     box-shadow: none;
     margin-top: 8px;
 }
@@ -262,3 +271,4 @@ fieldset p{
     color: #666;
     cursor: not-allowed;
 }
+ 
