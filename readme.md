@@ -13,7 +13,7 @@ Este projeto visa desenvolver um site com um formulário de interesse, para que 
 
 - Frontend: HTML, CSS, JavaScript
 - Backend: Node.js
-- Banco de Dados: Google Sheets API para armazenamento de dados
+- Dados: Google Sheets API para armazenamento de dados
 - Hospedagem: Github pages
 
 ## Arquetetura do sistema
