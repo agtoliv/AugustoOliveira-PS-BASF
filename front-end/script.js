@@ -357,144 +357,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+//validação pro usuário
+document.getElementById('form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Previne o envio padrão do formulário
 
+    let isValid = true; // Flag para verificar a validade geral do formulário
 
-
-
-/*var allRadios = document.getElementsByName('option');
-var previous = null;
-
-// Seleciona todos os botões de opção com o nome 'option'
-var radios = document.querySelectorAll('input[type=radio][name="option"]');
-
-radios.forEach(function(radio) {
-    /*radio.addEventListener('click', function() {
-        var firstname = document.getElementById('firstname');
-        var lastname = document.getElementById('lastname');
-        var email = document.getElementById('email');
-
-        // **Verificar se os campos obrigatórios foram preenchidos corretamente**
-        if (!validateField(firstname, /^[a-zA-Z ]{2,30}$/) ||
-            !validateField(lastname, /^[a-zA-Z ]{2,30}$/) ||
-            !validateField(email, /^[^@]+@[^@]+\.[^@]+$/)) {
-            // **Desmarcar o botão de rádio**
-            this.checked = false;
-
-            // **Retornar imediatamente para evitar que o restante do código seja executado**
-            return;
-        }*/
-
-        /*var productFieldset = document.getElementById('productFieldset');
-        var descriptionField = document.getElementById('descriptionField');
-        var agreementField = document.getElementById('agreementField');
-
-        // Se o botão de opção já estava selecionado, desmarque-o
-        if (this.checked && this.wasChecked) {
-            this.checked = false;
-            this.wasChecked = false;
-
-            // Esconde ambos os campos quando o botão de rádio é desmarcado
-            productFieldset.style.display = 'none';
-            descriptionField.style.display = 'none';
-
-            // Adicionado: Oculta o campo de acordo quando os botões são desmarcados
-            agreementField.style.display = 'none';
+    // Valida cada campo e atualiza a flag `isValid` conforme necessário
+    ['firstname', 'lastname', 'email'].forEach(function(id) {
+        const field = document.getElementById(id);
+        if (id === 'email') {
+            isValid &= validateField(field, /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/, customEmailValidation);
         } else {
-            // Atualiza o estado 'wasChecked' para o próximo clique
-            this.wasChecked = this.checked;
-
-            if (this.value === 'firstoption') {
-                productFieldset.style.display = 'block';
-                descriptionField.style.display = 'none';
-                agreementField.style.display = 'block';
-
-                // Adicionado: Atualiza o estado do botão de acordo ao clicar em "firstoption"
-                toggleAgreement(this);
-            } else if (this.value === 'secondoption') {
-                descriptionField.style.display = 'block';
-                productFieldset.style.display = 'none';
-                agreementField.style.display = 'block';
-
-                // Adicionado: Atualiza o estado do botão de acordo ao clicar em "secondoption"
-                toggleAgreement(this);
-            }
-        }
-    });
-//});
-
-function setupProductHandlers(productNumber) {
-    var volumeId = 'volume' + productNumber;
-    var pId = 'p' + productNumber;
-    var volumeBoxId = 'volumeBox' + productNumber;
-
-    function incrementValue() {
-        var value = parseInt(document.getElementById(volumeId).value, 10);
-        value = isNaN(value) ? 0 : value;
-        value++;
-        document.getElementById(volumeId).value = value;
-    }
-
-    function decrementValue() {
-        var value = parseInt(document.getElementById(volumeId).value, 10);
-        value = isNaN(value) ? 0 : value;
-        if (value > 1) {
-            value--;
-            document.getElementById(volumeId).value = value;
-        }
-    }
-
-    document.getElementById(pId).addEventListener('change', function() {
-        var volumeBox = document.getElementById(volumeBoxId);
-        if (this.checked) {
-            volumeBox.style.display = 'block';
-        } else {
-            volumeBox.style.display = 'none';
+            isValid &= validateField(field, /^[a-zA-Z ]{2,30}$/);
         }
     });
 
-    document.getElementById('increment' + productNumber).addEventListener('click', incrementValue);
-    document.getElementById('decrement' + productNumber).addEventListener('click', decrementValue);
-}
+    if (isValid) {
+        console.log('Formulário válido, enviando dados...');
 
-// Configurar para produtos de 1 a 15
-for (var i = 1; i <= 15; i++) {
-    setupProductHandlers(i);
-}
+        // Aqui você colocaria a lógica de envio dos dados, por exemplo, uma chamada AJAX ou fetch
+        // Simulando um envio de dados assíncrono com um setTimeout
+        setTimeout(() => {
+            // Mostra uma mensagem para o usuário
+            alert('Seus dados foram enviados com sucesso!');
 
-let radioState = false;
-
-document.querySelector('.agreement-radio').addEventListener('click', function() {
-    if (radioState) {
-        this.checked = false;
+            // Recarrega a página
+            window.location.reload();
+        }, 1000); // Ajuste o tempo conforme necessário para simular o atraso do envio
     }
-    radioState = this.checked;
 });
-
-// Adicionado: Função para atualizar o estado do botão de acordo
-function toggleAgreement(radio) {
-    var agreementDiv = document.querySelector('.agreement');
-    if (radio.value === 'firstoption' || radio.value === 'secondoption') {
-        agreementDiv.style.display = 'block';
-    } else {
-        agreementDiv.style.display = 'none';
-    }
-}
-
-// Primeiro, esconda a div 'agreement' usando CSS
-document.querySelector('.agreement').style.display = 'none';
-
-window.onload = function() {
-    // Inicialmente, esconda o botão de envio
-    document.querySelector('.submit-button').style.display = 'none';
-
-    // Adicione um ouvinte de evento ao botão de rádio
-    document.querySelector('.agreement-radio').addEventListener('click', function() {
-        // Se o botão de rádio estiver marcado, mostre o botão de envio
-        if (this.checked) {
-            document.querySelector('.submit-button').style.display = 'block';
-        } else {
-            // Caso contrário, esconda o botão de envio
-            document.querySelector('.submit-button').style.display = 'none';
-        }
-    });
-};*/
