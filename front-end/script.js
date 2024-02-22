@@ -1,34 +1,34 @@
-document.getElementById('form').addEventListener('submit', function(e) {
-    e.preventDefault(); // Impede o envio padrão do formulário
+FirebaseFirestore.initializeApp(firebaseConfig);
+var contactFormDB = firebase.database().red("form");
 
-    const formData = {
-        firstname: document.getElementById('firstname').value,
-        lastname: document.getElementById('lastname').value,
-        email: document.getElementById('email').value
-    };
+document.getElementById("form").addEventListener("submit", submitForm )
 
-    // Certifique-se de que a URL é absoluta e correta
-    fetch('http://localhost:5500/submit-form', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.text(); // ou response.json() se o servidor responder com JSON
-    })
-    .then(data => {
-        alert('Formulário enviado com sucesso! Resposta: ' + data);
-    })
-    .catch((error) => {
-        console.error('Erro:', error);
-    });
-});
+function submitForm(e){
+    e.preventDefault();
+
+    var firstname = getElementVal('firstname');
+    var lastname = getElementVal('lastname');
+    var email = getElementVal('email');
+
+    console.log(firstname, lastname, email);
+}
+
+const getElementVal = (id) => {
+    return document.getElementById(id).value;
+};
+
+fetch('http://localhost:5500/submit-form', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(formData),
+})
+
+
+
 
 import cors from 'cors';
 app.use(cors());
+
 
