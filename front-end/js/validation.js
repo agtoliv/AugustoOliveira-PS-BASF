@@ -1,5 +1,5 @@
 // Função para validar os campos
-function validateField(field, regex, customValidation) {
+export function validateField(field, regex, customValidation) {
     const trimmedValue = field.value.trim();
 
     if (trimmedValue === '') {
@@ -49,7 +49,7 @@ function clearErrorMessage(field) {
 
     field.addEventListener('blur', function () {
         if (id === 'email') {
-            validateField(field, /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/, customEmailValidation);
+            validateField(email, /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, customEmailValidation);
         } else {
             validateField(field, /^[a-zA-Z ]{2,30}$/);
         }
@@ -70,7 +70,7 @@ document.getElementById('form').addEventListener('submit', function (event) {
 
     validateField(firstname, /^[a-zA-Z ]{2,30}$/);
     validateField(lastname, /^[a-zA-Z ]{2,30}$/);
-    validateField(email, /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/, customEmailValidation);
+    validateField(email, /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, customEmailValidation);
 });
 
 // Adicionar estilos CSS para a mensagem de erro
@@ -151,13 +151,18 @@ function validatePhone(input) {
 function validateCity(input) {
     clearError(input);
 
-    // Pode adicionar aqui a lógica para validar o nome da cidade se necessário
-
     // Exemplo simples: verifica se o campo está vazio ou possui menos de 3 caracteres
     if (input.value.length < 3 && input.value.length > 0) {
         showError(input, 'Cidade inválida');
     }
 }
+
+// Certifique-se de chamar clearError e showError conforme necessário
+function clearError(input) {
+    input.style.borderColor = '';
+    input.nextElementSibling.textContent = '';
+}
+
 
 function showError(input, message) {
     input.classList.add('error');
