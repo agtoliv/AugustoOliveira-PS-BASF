@@ -1,21 +1,21 @@
 function handleSubmit(event) {
     event.preventDefault();
 
-    // Captura os valores dos campos de entrada existentes
+    
     const firstname = document.querySelector('input[name=firstname]').value;
     const lastname = document.querySelector('input[name=lastname]').value;
     const email = document.querySelector('input[name=email]').value;
     const tel = document.querySelector('input[name=tel]').value;
     const city = document.querySelector('input[name=city]').value;
-    // Captura o valor da área de texto de descrição, se aplicável
+    
     const description = document.querySelector('#descriptionField textarea') ? document.querySelector('#descriptionField textarea').value.trim() : "";
-    // Captura o valor da área de texto de observações
+    
     const observations = document.querySelector('.obs textarea').value.trim();
 
-    // Verifica se a opção "secondoption" está selecionada para a descrição
+    
     const isSecondOptionSelected = document.querySelector('input[name="option"][value="secondoption"]').checked;
 
-    // Coleta os dados dos produtos selecionados e seus volumes
+    
     const products = [];
     for (let i = 1; i <= 15; i++) {
         const productCheckbox = document.getElementById(`p${i}`);
@@ -23,27 +23,27 @@ function handleSubmit(event) {
             const volumeInput = document.getElementById(`volume${i}`).value;
             products.push({
                 product: productCheckbox.value,
-                volume: volumeInput || '0', // Caso não haja volume, envia '0'
+                volume: volumeInput || '0', 
             });
         }
     }
 
-    // Prepara os dados para envio, incluindo os produtos, volumes, descrição e observações
+    
     const data = {
         firstname,
         lastname,
         email,
         tel,
         city,
-        products: JSON.stringify(products), // Converte a lista de produtos em uma string JSON
+        products: JSON.stringify(products), 
     };
 
-    // Inclui descrição se "secondoption" estiver selecionada e descrição estiver preenchida
+    
     if (isSecondOptionSelected && description !== "") {
         data.description = description;
     }
 
-    // Sempre inclui observações, se houver
+    
     if (observations !== "") {
         data.observations = observations;
     }
@@ -88,18 +88,18 @@ function validateField(field, regex, customValidation) {
 
 // Função de validação personalizada para o campo de email
 function customEmailValidation(email) {
-    // Verifica se o email é composto apenas por uma única letra repetida
+    
     const lowercaseEmail = email.toLowerCase();
     const firstChar = lowercaseEmail.charAt(0);
 
     if (/^[a-z]$/.test(firstChar) && new RegExp(`^${firstChar}+$`).test(lowercaseEmail)) {
-        // Se for uma única letra repetida, considerar inválido
+        
         return false;
     }
 
-    // Aqui você pode adicionar outras verificações personalizadas se necessário
+    
 
-    // Caso contrário, considerar válido
+    
     return true;
 }
 
@@ -115,7 +115,7 @@ function clearErrorMessage(field) {
     field.style.borderColor = '';
 }
 
-// Adicionar ouvintes de eventos para os campos
+
 ['firstname', 'lastname', 'email'].forEach(function (id) {
     var field = document.getElementById(id);
 
@@ -145,7 +145,7 @@ document.getElementById('form').addEventListener('submit', function (event) {
     validateField(email, /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/, customEmailValidation);
 });
 
-// Adicionar estilos CSS para a mensagem de erro
+
 var style = document.createElement('style');
 style.innerHTML = `
     .error-message {
@@ -162,13 +162,13 @@ celularNumber.addEventListener("input", () => {
     // Remover caracteres não numéricos por regex
     var cleanValue = celularNumber.value.replace(/\D/g, "").substring(0, 11);
 
-    // Dividir a string em um array de caracteres individuais.
+    
     var numArray = cleanValue.split("");
 
-    // Variável que recebe o número formatado
+    
     var numFormated = "";
 
-    // Se a quantidade é maior que zero
+    
     if (numArray.length > 0) {
         numFormated += `(${numArray.slice(0, 2).join("")})`;
     }
@@ -181,11 +181,11 @@ celularNumber.addEventListener("input", () => {
         numFormated += `-${numArray.slice(7, 11).join("")}`;
     }
 
-    // Atribuir o número formatado ao campo de input
+    
     celularNumber.value = numFormated;
 });
 
-// Adiciona eventos de foco nos campos para remover a borda vermelha e a mensagem de erro
+
 document.getElementById('tel').addEventListener('focus', function () {
     clearError(this);
 });
@@ -194,12 +194,12 @@ document.getElementById('city').addEventListener('focus', function () {
     clearError(this);
 });
 
-// Adiciona evento de saída do campo para validar o telefone
+
 document.getElementById('tel').addEventListener('blur', function () {
     validatePhone(this);
 });
 
-// Adiciona evento de saída do campo para validar a cidade
+
 document.getElementById('city').addEventListener('blur', function () {
     validateCity(this);
 });
@@ -212,9 +212,9 @@ function clearError(input) {
 function validatePhone(input) {
     clearError(input);
 
-    // Pode adicionar aqui a lógica para validar o número de telefone se necessário
+    
 
-    // Exemplo simples: verifica se há pelo menos 8 dígitos
+    
     if (input.value.length < 8 && input.value.length > 0) {
         showError(input, 'Telefone inválido');
     }
@@ -225,10 +225,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const errorMessage = document.querySelector('.error-message');
 
     inputCity.addEventListener('input', function() {
-        // Remove dígitos do valor atualmente inserido, permitindo somente texto
+        
         inputCity.value = inputCity.value.replace(/\d+/g, '');
 
-        // Validação adicional para mostrar mensagem de erro se necessário
+        
         const isValid = /^[A-Za-z\s]+$/.test(inputCity.value);
         if (!isValid && inputCity.value.length > 0) {
             errorMessage.textContent = "Por favor, insira somente texto, sem números.";
@@ -251,7 +251,7 @@ function showError(input, message) {
 }
 
 
-//////////// condicional//////////
+//Condicionais
 
 document.addEventListener('DOMContentLoaded', function() {
     const firstOptionRadio = document.querySelector('input[name="option"][value="firstoption"]');
@@ -270,12 +270,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Adicionando listeners aos botões de rádio
+    
     firstOptionRadio.addEventListener('change', toggleVisibility);
     secondOptionRadio.addEventListener('change', toggleVisibility);
 
     // Inicializando estado visível
-    toggleVisibility(); // Garante que a visibilidade esteja correta ao carregar a página
+    toggleVisibility(); 
 });
 
 function setupProductHandlers(productNumber) {
@@ -316,13 +316,13 @@ function setupProductHandlers(productNumber) {
     document.getElementById('decrement' + productNumber).addEventListener('click', decrementValue);
 }
 
-// Configurar para produtos de 1 a 15
+
 for (var i = 1; i <= 15; i++) {
     setupProductHandlers(i);
 }
 
 
-///////desabilitar botão
+//Bloqueio do submit
 document.addEventListener('DOMContentLoaded', () => {
     const submitButton = document.querySelector('.submit-button button');
     const radio = document.querySelector('.agreement-radio');
@@ -331,7 +331,7 @@ document.addEventListener('DOMContentLoaded', () => {
     disableSubmitButton();
 
     radio.addEventListener('click', function() {
-        // Verifica se o botão de rádio já estava marcado antes do clique
+        
         if (this.dataset.checked === "true") {
             this.checked = false;
             this.dataset.checked = "false";
@@ -351,19 +351,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function enableSubmitButton() {
         submitButton.disabled = false;
-        submitButton.style.backgroundColor = ''; // Restaura a cor original
-        submitButton.style.color = ''; // Restaura a cor do texto original
-        submitButton.style.cursor = ''; // Restaura o cursor original
+        submitButton.style.backgroundColor = ''; 
+        submitButton.style.color = ''; 
+        submitButton.style.cursor = ''; 
     }
 });
 
 //validação pro usuário
 document.getElementById('form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Previne o envio padrão do formulário
+    event.preventDefault(); 
 
-    let isValid = true; // Flag para verificar a validade geral do formulário
+    let isValid = true; 
 
-    // Valida cada campo e atualiza a flag `isValid` conforme necessário
+    
     ['firstname', 'lastname', 'email'].forEach(function(id) {
         const field = document.getElementById(id);
         if (id === 'email') {
@@ -376,14 +376,14 @@ document.getElementById('form').addEventListener('submit', function(event) {
     if (isValid) {
         console.log('Formulário válido, enviando dados...');
 
-        // Aqui você colocaria a lógica de envio dos dados, por exemplo, uma chamada AJAX ou fetch
-        // Simulando um envio de dados assíncrono com um setTimeout
+        
+        
         setTimeout(() => {
             // Mostra uma mensagem para o usuário
             alert('Seus dados foram enviados com sucesso!');
 
             // Recarrega a página
             window.location.reload();
-        }, 1000); // Ajuste o tempo conforme necessário para simular o atraso do envio
+        }, 1000); 
     }
 });
