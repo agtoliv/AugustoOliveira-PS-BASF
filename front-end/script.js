@@ -289,6 +289,45 @@ for (var i = 1; i <= 15; i++) {
     setupProductHandlers(i);
 }
 
+//////////////tirando mensagem padrão de required
+document.getElementById("form").addEventListener("submit", function(event){
+    event.preventDefault();
+});
+
+///////desabilitar botão
+document.addEventListener('DOMContentLoaded', () => {
+    const submitButton = document.querySelector('.submit-button button');
+    const radio = document.querySelector('.agreement-radio');
+
+    // Inicialmente desabilita o botão de envio
+    disableSubmitButton();
+
+    radio.addEventListener('click', function() {
+        // Verifica se o botão de rádio já estava marcado antes do clique
+        if (this.dataset.checked === "true") {
+            this.checked = false;
+            this.dataset.checked = "false";
+            disableSubmitButton();
+        } else {
+            this.dataset.checked = "true";
+            enableSubmitButton();
+        }
+    });
+
+    function disableSubmitButton() {
+        submitButton.disabled = true;
+        submitButton.style.backgroundColor = '#ccc';
+        submitButton.style.color = '#666';
+        submitButton.style.cursor = 'not-allowed';
+    }
+
+    function enableSubmitButton() {
+        submitButton.disabled = false;
+        submitButton.style.backgroundColor = ''; // Restaura a cor original
+        submitButton.style.color = ''; // Restaura a cor do texto original
+        submitButton.style.cursor = ''; // Restaura o cursor original
+    }
+});
 
 
 

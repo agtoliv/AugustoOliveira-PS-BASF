@@ -128,6 +128,18 @@ input, textarea, button{
     width: 150px;
 }
 
+/* Para o Firefox */
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+  /* Para o Chrome, Safari, Edge, Opera */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 .product-item label {
     margin-right: 6px;
 }
@@ -213,15 +225,40 @@ fieldset p{
     margin-right: 2px;
 }
 
-.submit-button {
-    display: block;
+#agreementField{
+    display: flex;
+    flex-direction: column;
+}
+
+.submit-button{
+    margin-top: 24px;
+}
+
+.submit-button button{
+    border: 0px;
+    font-family: inherit;
     width: 100%;
-    padding: 10px;
-    border: none;
-    background: #5cb85c;
-    color: white;
-    font-size: 16px;
-    border-radius: 4px;
+    max-width: 320px;
+    flex-shrink: 0;
     cursor: pointer;
-    margin-top: 20px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    outline-offset: 2px;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    padding: 12px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(197, 0, 34);
+    box-shadow: none;
+    margin-top: 8px;
+}
+
+.submit-button button[disabled] {
+    background-color: #ccc; /* Cor cinza para ilustrar que está desabilitado */
+    color: #666;
+    cursor: not-allowed;
 }
