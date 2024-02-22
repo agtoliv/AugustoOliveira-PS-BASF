@@ -289,10 +289,6 @@ for (var i = 1; i <= 15; i++) {
     setupProductHandlers(i);
 }
 
-//////////////tirando mensagem padrão de required
-document.getElementById("form").addEventListener("submit", function(event){
-    event.preventDefault();
-});
 
 ///////desabilitar botão
 document.addEventListener('DOMContentLoaded', () => {
