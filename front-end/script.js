@@ -220,16 +220,30 @@ function validatePhone(input) {
     }
 }
 
-function validateCity(input) {
-    clearError(input);
+document.addEventListener('DOMContentLoaded', function() {
+    const inputCity = document.getElementById('city');
+    const errorMessage = document.querySelector('.error-message');
 
-    // Pode adicionar aqui a lógica para validar o nome da cidade se necessário
+    inputCity.addEventListener('input', function() {
+        // Remove dígitos do valor atualmente inserido, permitindo somente texto
+        inputCity.value = inputCity.value.replace(/\d+/g, '');
 
-    // Exemplo simples: verifica se o campo está vazio ou possui menos de 3 caracteres
-    if (input.value.length < 3 && input.value.length > 0) {
-        showError(input, 'Cidade inválida');
-    }
-}
+        // Validação adicional para mostrar mensagem de erro se necessário
+        const isValid = /^[A-Za-z\s]+$/.test(inputCity.value);
+        if (!isValid && inputCity.value.length > 0) {
+            errorMessage.textContent = "Por favor, insira somente texto, sem números.";
+        } else {
+            errorMessage.textContent = "";
+        }
+    });
+
+    inputCity.addEventListener('keypress', function(event) {
+        // Impede a digitação de números
+        if (event.key >= '0' && event.key <= '9') {
+            event.preventDefault();
+        }
+    });
+});
 
 function showError(input, message) {
     input.classList.add('error');
