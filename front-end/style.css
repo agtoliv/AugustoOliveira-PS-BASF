@@ -99,3 +99,48 @@ input, textarea, button{
 .options input{
     margin-right: 2px;
 }
+
+.products {
+    display: flex;
+    margin-top: 5px;
+}
+
+.column {
+    flex-direction: column;
+    flex: 10; /* Isso faz com que cada coluna ocupe espaço igualmente */
+    margin-top: 8px;
+}
+
+
+.product-item {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+}
+
+.box-vol{
+    margin-top: 5px;
+    margin-left: 1px;
+}
+
+.box-vol input{
+    width: 150px;
+}
+
+.product-item label {
+    margin-right: 6px;
+}
+
+.input-group {
+    display: flex;
+    width: 33.33%;
+}
+
+
+.input-group button{
+    display: block;
+    text-decoration: none;
+    border: none;
+    padding: 10%;
+}
