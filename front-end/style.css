@@ -213,6 +213,15 @@ fieldset p{
     margin-right: 2px;
 }
 
-.submit-button{
-    margin-top: 24px;
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #5cb85c;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
 }
