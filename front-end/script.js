@@ -1,34 +1,27 @@
-FirebaseFirestore.initializeApp(firebaseConfig);
-var contactFormDB = firebase.database().red("form");
+const handleSubmit = (event) => {
+    event.preventDefault();
 
-document.getElementById("form").addEventListener("submit", submitForm )
+    const firstname = document.querySelector('input[name=firstname]').value;
+    const lastname = document.querySelector('input[name=lastname]').value;
+    const email = document.querySelector('input[name=email]').value;
 
-function submitForm(e){
-    e.preventDefault();
-
-    var firstname = getElementVal('firstname');
-    var lastname = getElementVal('lastname');
-    var email = getElementVal('email');
-
-    console.log(firstname, lastname, email);
+    fetch('https://api.sheetmonkey.io/form/nAgMX6GjWHZpsrWrD5ZrtC', {
+        method: 'post',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({firstname, lastname, email})
+    }).then(response => {
+        if (response.ok) {
+            return response.json();
+        }
+        throw new Error('Network response was not ok.');
+    }).then(data => {
+        console.log('Data submitted successfully:', data);
+    }).catch(error => {
+        console.error('There has been a problem with your fetch operation:', error);
+    });
 }
 
-const getElementVal = (id) => {
-    return document.getElementById(id).value;
-};
-
-fetch('http://localhost:5500/submit-form', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(formData),
-})
-
-
-
-
-import cors from 'cors';
-app.use(cors());
-
-
+document.querySelector('form').addEventListener('submit', handleSubmit);
