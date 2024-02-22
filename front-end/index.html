@@ -52,6 +52,34 @@
                 </div>
             </div>
 
+            <fieldset id="productFieldset" style="display: none;">
+                <p>Selecione os produtos:</p>
+                <div class="products">
+                    <div class="bigColumn">
+                        <div class="column">
+                            <div class="product-item">
+                                <div class="check">
+                                    <label for="p1">Texapon S 2</label>
+                                    <input type="checkbox" id="p1" name="p1" value="Texapon">
+                                </div>
+                                <div class="box-vol" id="volumeBox1" style="display: none;">
+                                    <label for="volume1">Volume do produto</label>
+                                    <div class="input-group">
+                                        <button onclick="decrementValue(1)" id="decrement1">-</button>
+                                        <input id="volume1" type="number" name="volume1" min="1" placeholder="Digite seu volume"/>
+                                        <button onclick="incrementValue(1)" id="increment1">+</button>
+                                    </div>
+                                    <span class="error-message"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+
+
+
             <div id="btn">
                 <button type="submit" class="submit-btn">Enviar</button>
             </div>
