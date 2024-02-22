@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const isValid = /^[A-Za-z\s]+$/.test(inputCity.value);
         if (!isValid && inputCity.value.length > 0) {
-            errorMessage.textContent = "Por favor, insira somente texto, sem números.";
+            /*errorMessage.textContent = "Por favor, insira somente texto, sem números.";*/
         } else {
             errorMessage.textContent = "";
         }
