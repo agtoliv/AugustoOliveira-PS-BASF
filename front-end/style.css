@@ -80,3 +80,22 @@ input, textarea, button{
     font-size: 12px;
     color:red;
 }
+
+.error-message {
+    padding: 1%;
+    color: red;
+    height: 20px;
+}
+
+
+.options{
+    margin-top: 8px;
+}
+
+.options label{
+    margin-right: 8px;
+}
+
+.options input{
+    margin-right: 2px;
+}
