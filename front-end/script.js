@@ -219,14 +219,44 @@ function showError(input, message) {
     input.nextElementSibling.innerHTML = message;
 }
 
-var allRadios = document.getElementsByName('option');
+document.addEventListener('DOMContentLoaded', function() {
+    const firstOptionRadio = document.querySelector('input[name="option"][value="firstoption"]');
+    const secondOptionRadio = document.querySelector('input[name="option"][value="secondoption"]');
+    const productFieldset = document.getElementById('productFieldset');
+    const descriptionField = document.getElementById('descriptionField');
+
+    // Função para alternar visibilidade
+    function toggleVisibility() {
+        if (firstOptionRadio.checked) {
+            productFieldset.style.display = '';
+            descriptionField.style.display = 'none';
+        } else if (secondOptionRadio.checked) {
+            productFieldset.style.display = 'none';
+            descriptionField.style.display = '';
+        }
+    }
+
+    // Adicionando listeners aos botões de rádio
+    firstOptionRadio.addEventListener('change', toggleVisibility);
+    secondOptionRadio.addEventListener('change', toggleVisibility);
+
+    // Inicializando estado visível
+    toggleVisibility(); // Garante que a visibilidade esteja correta ao carregar a página
+});
+
+
+
+
+
+
+/*var allRadios = document.getElementsByName('option');
 var previous = null;
 
 // Seleciona todos os botões de opção com o nome 'option'
 var radios = document.querySelectorAll('input[type=radio][name="option"]');
 
 radios.forEach(function(radio) {
-    radio.addEventListener('click', function() {
+    /*radio.addEventListener('click', function() {
         var firstname = document.getElementById('firstname');
         var lastname = document.getElementById('lastname');
         var email = document.getElementById('email');
@@ -240,9 +270,9 @@ radios.forEach(function(radio) {
 
             // **Retornar imediatamente para evitar que o restante do código seja executado**
             return;
-        }
+        }*/
 
-        var productFieldset = document.getElementById('productFieldset');
+        /*var productFieldset = document.getElementById('productFieldset');
         var descriptionField = document.getElementById('descriptionField');
         var agreementField = document.getElementById('agreementField');
 
@@ -278,7 +308,7 @@ radios.forEach(function(radio) {
             }
         }
     });
-});
+//});
 
 function setupProductHandlers(productNumber) {
     var volumeId = 'volume' + productNumber;
@@ -355,4 +385,4 @@ window.onload = function() {
             document.querySelector('.submit-button').style.display = 'none';
         }
     });
-};
+};*/

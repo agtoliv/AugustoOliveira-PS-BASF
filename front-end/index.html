@@ -45,6 +45,12 @@
                                 <input id="city" type="text" name="city" placeholder="Digite sua cidade"/>
                                 <span class="error-message"></span>
                             </div>
+
+                            <!--<div class="box">
+                                <label for="volume">Volume do produto</label>
+                                <input id="volume" type="number" name="volume" placeholder="Digite seu volume"/>
+                                <span class="error-message"></span>
+                            </div> -->
                     </div>
                     <div class="escolha">
                         <label>Sabe qual produto utlizar?</label>
@@ -57,8 +63,7 @@
                             </label>
                         </div>
                     </div>
-                                                <!---->
-                    <fieldset id="productFieldset" >
+                    <fieldset id="productFieldset" style="display: none;">
                         <p>Selecione os produtos:</p>
                         <div class="products">
                             <div class="bigColumn">
@@ -68,7 +73,7 @@
                                             <label for="p1">Texapon S 2</label>
                                             <input type="checkbox" id="p1" name="p1" value="Texapon">
                                         </div>
-                                        <div class="box-vol" id="volumeBox1" >
+                                        <div class="box-vol" id="volumeBox1" style="display: none;">
                                             <label for="volume1">Volume do produto</label>
                                             <div class="input-group">
                                                 <button onclick="decrementValue(1)" id="decrement1">-</button>
@@ -84,7 +89,7 @@
                                             <label for="p2">Texapon S 2</label>
                                             <input type="checkbox" id="p2" name="p2" value="Texapon">
                                         </div>
-                                        <div class="box-vol" id="volumeBox2" >
+                                        <div class="box-vol" id="volumeBox2" style="display: none;">
                                             <label for="volume2">Volume do produto</label>
                                             <div class="input-group">
                                                 <button onclick="decrementValue(2)" id="decrement2">-</button>
@@ -100,7 +105,7 @@
                                             <label for="p3">Texapon S 2</label>
                                             <input type="checkbox" id="p3" name="p3" value="Texapon">
                                         </div>
-                                        <div class="box-vol" id="volumeBox3" >
+                                        <div class="box-vol" id="volumeBox3" style="display: none;">
                                             <label for="volume3">Volume do produto</label>
                                             <div class="input-group">
                                                 <button onclick="decrementValue(3)" id="decrement3">-</button>
@@ -116,7 +121,7 @@
                                             <label for="p4">Texapon S 2</label>
                                             <input type="checkbox" id="p4" name="p4" value="Texapon">
                                         </div>
-                                        <div class="box-vol" id="volumeBox4" >
+                                        <div class="box-vol" id="volumeBox4" style="display: none;">
                                             <label for="volume4">Volume do produto</label>
                                             <div class="input-group">
                                                 <button onclick="decrementValue(4)" id="decrement4">-</button>
@@ -132,7 +137,7 @@
                                             <label for="p5">Texapon S 2</label>
                                             <input type="checkbox" id="p5" name="p5" value="Texapon">
                                         </div>
-                                        <div class="box-vol" id="volumeBox5" >
+                                        <div class="box-vol" id="volumeBox5" style="display: none;">
                                             <label for="volume5">Volume do produto</label>
                                             <div class="input-group">
                                                 <button onclick="decrementValue(5)" id="decrement5">-</button>
@@ -150,7 +155,7 @@
                                             <label for="p6">Texapon S 2</label>
                                             <input type="checkbox" id="p6" name="p6" value="Texapon">
                                         </div>
-                                        <div class="box-vol" id="volumeBox6" >
+                                        <div class="box-vol" id="volumeBox6" style="display: none;">
                                             <label for="volume6">Volume do produto</label>
                                             <div class="input-group">
                                                 <button onclick="decrementValue(6)" id="decrement6">-</button>
@@ -166,7 +171,7 @@
                                             <label for="p7">Texapon S 2</label>
                                             <input type="checkbox" id="p7" name="p7" value="Texapon">
                                         </div>
-                                        <div class="box-vol" id="volumeBox7" >
+                                        <div class="box-vol" id="volumeBox7" style="display: none;">
                                             <label for="volume7">Volume do produto</label>
                                             <div class="input-group">
                                                 <button onclick="decrementValue(7)" id="decrement7">-</button>
@@ -182,7 +187,7 @@
                                             <label for="p8">Texapon S 2</label>
                                             <input type="checkbox" id="p8" name="p8" value="Texapon">
                                         </div>
-                                        <div class="box-vol" id="volumeBox8" >
+                                        <div class="box-vol" id="volumeBox8" style="display: none;">
                                             <label for="volume8">Volume do produto</label>
                                             <div class="input-group">
                                                 <button onclick="decrementValue(8)" id="decrement8">-</button>
@@ -198,7 +203,7 @@
                                             <label for="p9">Texapon S 2</label>
                                             <input type="checkbox" id="p9" name="p9" value="Texapon">
                                         </div>
-                                        <div class="box-vol" id="volumeBox9" >
+                                        <div class="box-vol" id="volumeBox9" style="display: none;">
                                             <label for="volume9">Volume do produto</label>
                                             <div class="input-group">
                                                 <button onclick="decrementValue(9)" id="decrement9">-</button>
@@ -215,7 +220,7 @@
                                             <label for="p10">Texapon S 2</label>
                                             <input type="checkbox" id="p10" name="p10" value="Texapon">
                                         </div>
-                                        <div class="box-vol" id="volumeBox10" >
+                                        <div class="box-vol" id="volumeBox10" style="display: none;">
                                             <label for="volume10">Volume do produto</label>
                                             <div class="input-group">
                                                 <button onclick="decrementValue(10)" id="decrement10">-</button>
@@ -233,7 +238,7 @@
                                             <label for="p11">Texapon S 2</label>
                                             <input type="checkbox" id="p11" name="p11" value="Texapon">
                                         </div>
-                                        <div class="box-vol" id="volumeBox11" >
+                                        <div class="box-vol" id="volumeBox11" style="display: none;">
                                             <label for="volume11">Volume do produto</label>
                                             <div class="input-group">
                                                 <button onclick="decrementValue(11)" id="decrement11">-</button>
@@ -249,7 +254,7 @@
                                             <label for="p12">Texapon S 2</label>
                                             <input type="checkbox" id="p12" name="p12" value="Texapon">
                                         </div>
-                                        <div class="box-vol" id="volumeBox12" >
+                                        <div class="box-vol" id="volumeBox12" style="display: none;">
                                             <label for="volume12">Volume do produto</label>
                                             <div class="input-group">
                                                 <button onclick="decrementValue(12)" id="decrement12">-</button>
@@ -265,7 +270,7 @@
                                             <label for="p13">Texapon S 2</label>
                                             <input type="checkbox" id="p13" name="p13" value="Texapon">
                                         </div>
-                                        <div class="box-vol" id="volumeBox13" >
+                                        <div class="box-vol" id="volumeBox13" style="display: none;">
                                             <label for="volume13">Volume do produto</label>
                                             <div class="input-group">
                                                 <button onclick="decrementValue(13)" id="decrement13">-</button>
@@ -281,7 +286,7 @@
                                             <label for="p14">Texapon S 2</label>
                                             <input type="checkbox" id="p14" name="p14" value="Texapon">
                                         </div>
-                                        <div class="box-vol" id="volumeBox14" >
+                                        <div class="box-vol" id="volumeBox14" style="display: none;">
                                             <label for="volume14">Volume do produto</label>
                                             <div class="input-group">
                                                 <button onclick="decrementValue(14)" id="decrement14">-</button>
@@ -297,7 +302,7 @@
                                             <label for="p15">Texapon S 2</label>
                                             <input type="checkbox" id="p15" name="p15" value="Texapon">
                                         </div>
-                                        <div class="box-vol" id="volumeBox15" >
+                                        <div class="box-vol" id="volumeBox15" style="display: none;">
                                             <label for="volume15">Volume do produto</label>
                                             <div class="input-group">
                                                 <button onclick="decrementValue(15)" id="decrement15">-</button>
@@ -320,7 +325,7 @@
                         </div>
                     </fieldset>
 
-                    <div class="description" id="descriptionField" >
+                    <div class="description" id="descriptionField" style="display: none;">
                         <br>
                         <div class="description-item-label">
                             <label> Descreva sua necessidade</label>
@@ -330,15 +335,14 @@
                         </div>
                     </div>
 
-
                     <div class="agreement" id="agreementField">
                         <div class="agreement-options">
                             <label>
                                 <input type="radio" name="agreement" value="agreementOK" class="agreement-radio" onclick="toggleRadio(this)">Li e estou de acordo com os <a href="https://shop.basf.com.br/pt-BR/about-us/terms-of-use">termos/condições de uso</a> e a <a href="https://shop.basf.com.br/pt-BR/about-us/politica-de-privacidade-da-basf-brasil">política de privacidade</a>.
                             </label>
                         </div>
-                        <div class="container-btn">
-                            <button class ="submit-button" type="submit">Enviar</button>
+                        <div class="submit-button">
+                            <button type="submit">Enviar</button>
                         </div>
                     </div>
 
@@ -346,7 +350,7 @@
                 </form>
             </div>
         </div>
-        <script type="module" src="/script.js"></script>
+        <script src="script.js"></script>
     </div>
 </body>
 </html>
