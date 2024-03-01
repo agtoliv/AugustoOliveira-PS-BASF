@@ -48,7 +48,7 @@ function handleSubmit(event) {
         data.observations = observations;
     }
 
-    fetch('https://api.sheetmonkey.io/form/nAgMX6GjWHZpsrWrD5ZrtC', {
+    fetch('http://localhost:5500/submit-form', {
         method: 'post',
         headers: {
             'Accept': 'application/json',
