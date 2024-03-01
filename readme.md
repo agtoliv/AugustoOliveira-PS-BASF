@@ -71,5 +71,5 @@ Abaixo estão as imagens dos protótipos elaborados para o projeto:
 ![Página do Formulário de Interesse](assets/prot1.jpeg)
 ![Página do Formulário de Interesse](assets/prot2.jpeg)
 ![Página do Formulário de Interesse](assets/prot3.jpeg)
-![Página do Formulário de Interesse](assets/design4.jpeg)
+![Página do Formulário de Interesse](assets/SistemaArq.jpeg)
 
