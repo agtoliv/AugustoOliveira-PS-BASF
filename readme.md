@@ -12,8 +12,8 @@ Este projeto visa desenvolver um site com um formulário de interesse, para que 
 ## Tecnologias Utilizadas
 
 - Frontend: HTML, CSS, JavaScript
-- Backend: Node.js
-- Dados: Google Sheets API para armazenamento de dados
+- Backend: Node.js servidor express
+- Dados: SQL Lite
 - Hospedagem: Github pages
 
 ## Arquetetura do sistema
@@ -34,7 +34,7 @@ Plano detalhado para o desenvolvimento do formulário:
 - [x] Escolha de Tecnologias
   - [x] Selecionar tecnologias de frontend (HTML, CSS, JavaScript)
   - [x] Definir tecnologia de backend (Node.js)
-  - [x] Escolher o direcionamento dos dados (Google Sheets API)
+  - [x] Escolher o direcionamento dos dados (Database SQL Lite)
 
 **Design**
 - [x] Design do Formulário no figma
