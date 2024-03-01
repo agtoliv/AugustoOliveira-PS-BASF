@@ -18,7 +18,7 @@ Este projeto visa desenvolver um site com um formulário de interesse, para que 
 
 ## Arquetetura do sistema
 Ideia básica da disposição da arquitetura
-![Página do Formulário de Interesse](assets/SistemaArq.jpeg)
+![Página do Formulário de Interesse](assets/ArqSis.jpeg)
 
 
 ## Roadmap
